@@ -330,7 +330,6 @@ function checkHandV(direction) {
 	if (direction === "horizontal" && result === "") {
 		result = checkHandV("vertical");
 	}
-
 	return result;
 }
 
@@ -455,6 +454,7 @@ function displayWinner(combo) {
 
 	if (combo === "tie") {
 		title = "You Tied!";
+		whiteOut();
 		$(".board").hide().addClass("tied").fadeIn(400);
 	} else {
 		changeScore();
@@ -488,6 +488,16 @@ function colorSquares() {
 						 .addClass(highlightClass)
 						 .addClass("highlightText")
 						 .fadeIn();
+	}
+}
+
+// Whites out all text on the board (for a tie)
+function whiteOut() {
+	for (var i = 1; i <= 3; i++) {
+		for (var j = 1; j <= 3; j++) {
+			var selector = "#r" + i + "c"  + j;
+			$(selector).addClass("highlightText");
+		}
 	}
 }
 
@@ -625,9 +635,12 @@ $(".ex, .oh").on("click", function() {
 $(document).on("click", ".mode", function() {	// Selects pVp or pVc
 	playSound("close");
 	mode = $(this).attr("id");
-	if (mode === "pVc") {		// Instead of Player 2, this will show "Computer"
-		$(".player2Title").text("Computer's Score")
-	}
+	
+	// Instead of Player 2, this will show "Computer"
+	mode === "pVc" ? 	
+	$(".player2Title").text("Computer's Score") :
+	$(".player2Title").text("Player 2's Score");
+
 	hideDisplay(".modeTitle", ".mode");
 	setActivePlayerBG();
 })
