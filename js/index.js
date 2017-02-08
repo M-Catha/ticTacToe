@@ -247,15 +247,15 @@ function buildString(title, option1, option2, id1, id2, className) {
 
 	var string =
 
-			"<div class='modeTitle'>" +
-				"<span>" + title + "</span>" + 
-			"</div>" +
-			"<div id='" + id1 + "' class='" + className + "'>" + 
-				"<span>" + option1 + "</span>" +
-			"</div>" +
-			"<div id='" + id2 + "' class='" + className + "'>" +
-				"<span>" + option2 + "</span" +
-			"</div>";
+		"<div class='modeTitle'>" +
+			"<span>" + title + "</span>" + 
+		"</div>" +
+		"<div id='" + id1 + "' class='" + className + "'>" + 
+			"<span>" + option1 + "</span>" +
+		"</div>" +
+		"<div id='" + id2 + "' class='" + className + "'>" +
+			"<span>" + option2 + "</span" +
+		"</div>";
 
 	return string;
 }
