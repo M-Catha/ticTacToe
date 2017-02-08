@@ -118,7 +118,7 @@ function playSound(source) {
 	audio.play();
 }
 
-// Initial set of marker and transition to next screen
+// Initial setup of markers
 function setMarker(marker) {
 	if (marker === "ex") {
 		currentMarker = p1Marker = markers.ex;
