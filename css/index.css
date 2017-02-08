@@ -1,0 +1,233 @@
+body {
+	background:url("../assets/images/lined_paper.png");
+	background-repeat:repeat;
+	background-attachment:no-attachment;
+	font-family:'Gochi Hand';
+}
+
+#initialDisplay {
+	display:none;
+	position:absolute;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	width:100%;
+	z-index:1;
+	background-color:rgba(0, 0, 0, 0.7);
+}
+
+.optionBox {
+	margin:100px auto;
+	width:85%;
+	max-width:900px;
+	background-color:white;
+	border:10px #66000d outset;
+	border-radius:10px;
+	opacity:1.0;
+}
+
+.markerTitle {
+	padding:20px 0px;
+	background-color:black;
+	color:white;
+	text-align:center;
+}
+
+.markerTitle span {
+	font-size:100px;
+}
+
+.options {
+	width:100%;
+	text-align:center;
+}
+
+.ex, .oh {
+	display:inline-block;
+	margin:0px 40px;
+	font-size:250px;
+}
+
+.ex {
+	color:rgb(170, 0, 0);
+}
+
+.oh {
+	color:rgb(12, 105, 255);
+}
+
+.marker {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  cursor:pointer;
+}
+.marker:hover, .marker:focus, .marker:active {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+  -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+  transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+}
+
+.mode, .resetOption {
+	display: inline-block;
+	padding:20px 0px;
+	vertical-align: middle;
+	-webkit-transform: perspective(1px) translateZ(0);
+	transform: perspective(1px) translateZ(0);
+	box-shadow: 0 0 1px transparent;
+	position: relative;
+	background: #ffffff;
+	-webkit-transition-property: color;
+	transition-property: color;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	font-size:70px;
+	width:100%;
+	cursor:pointer;
+	text-align:center;
+}
+
+.mode:before, .resetOption:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #2098D1;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 50%;
+  transform-origin: 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.mode:hover, .mode:focus, .mode:active, .resetOption:hover, .resetOption:focus, .resetOption:active {
+  color: white;
+}
+.mode:hover:before, .mode:focus:before, .resetOption:active:before, .resetOption:hover:before, .resetOption:focus:before, .resetOption:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.modeTitle {
+	padding:20px 0px;
+	background-color:black;
+	color:white;
+	font-size:75px;
+	text-align:center;
+}
+
+.container {
+	margin:0 auto;
+	width:75%;
+	text-align:center;
+}
+
+.title {
+	font-size:150px;
+}
+
+.scores {
+	margin:20px auto 20px auto;
+	width:100%;
+}
+
+.player1Title, .player2Title {
+	font-size:45px;
+	border-bottom:5px white double;
+}
+
+.player1Score, .player2Score {
+	font-size:45px;
+}
+
+.player1, .player2 {
+	display:inline-block;
+	margin:0px 10px 0px 10px;
+	padding:10px;
+	border:2px white dotted;
+	border-radius:5px;
+	color:white;
+	background: #16222A;
+	background: -webkit-linear-gradient(to left, #16222A , #3A6073);
+	background: linear-gradient(to left, #16222A , #3A6073);
+}
+
+.activePlayer {
+	margin:0 auto;
+	height:50px;
+	width:350px;
+}
+
+.activePlayer span {
+	display:none;
+	font-size:45px;
+	color:white;
+}
+
+.board {
+	display:table;
+	margin:0 auto;
+	border:1px black dotted;
+	border-collapse:collapse;
+}
+
+.row1 div, .row2 div, .row3 div {
+	height:250px;
+	width:250px;
+}
+
+.row1, .row2, .row3 {
+	display:table-row;
+}
+
+.board div div {
+	display:table-cell;
+}
+
+.row1Cell, .row2Cell, .row3Cell {
+	vertical-align:middle;
+	font-size:210px;
+}
+
+.row2Cell {
+	border-top:10px black double;
+	border-bottom:10px black double;
+}
+
+.column2Cell {
+	border-left:10px black double;
+	border-right:10px black double;
+}
+
+.tied {
+	background-color:rgb(91, 6, 6);
+}
+
+.unclickable {
+	pointer-events:none;
+}
+
+.exBG {
+	background-color:rgb(170, 0, 0);
+}
+
+.ohBG {
+	background-color:rgb(12, 105, 255);
+}
+
+.highlightText {
+	color: white !important;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<title>Tic-Tac-Toe</title>
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<link href="https://fonts.googleapis.com/css?family=Gochi+Hand" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/components/icon.min.css">
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	</head>
+
+	<body>
+		<div id="initialDisplay">
+			<div class="optionBox">
+				<div class="markerTitle">
+					<span>Choose Your Marker:</span>
+				</div>
+				<div class="options">
+					<div class="ex">
+						<div class="marker">
+							<span>X</span>
+						</div>
+					</div>
+					<div class="oh">
+						<div class="marker">
+							<span>O</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="title">Tic-Tac-Toe</div>
+			<div class="scores">
+				<div class="player1">
+					<div class="player1Title">Player 1's Score</div>
+					<div class="player1Score">0</div>
+				</div>
+				<div class="player2">
+					<div class="player2Title">Player 2's Score</div>
+					<div class="player2Score">0</div>
+				</div>
+			</div>
+			<div class="activePlayer">
+				<span class="playerText">Player 1's Turn!</span>
+			</div>
+			<div class="board">
+				<div class="row1">
+					<div id="r1c1" class="row1Cell column1Cell">
+						<span class="mark"></span>
+					</div>
+					<div id="r1c2" class="row1Cell column2Cell">
+						<span class="mark"></span>
+					</div>
+					<div id="r1c3" class="row1Cell column3Cell">
+						<span class="mark"></span>
+					</div>
+				</div>
+				<div class="row2">
+					<div id="r2c1" class="row2Cell column1Cell">
+						<span class="mark"></span>
+					</div>
+					<div id="r2c2" class="row2Cell column2Cell">
+						<span class="mark"></span></div>
+					<div id="r2c3" class="row2Cell column3Cell">
+						<span class="mark"></span>
+					</div>
+				</div>
+				<div class="row3">
+					<div id="r3c1" class="row3Cell column1Cell">
+						<span class="mark"></span>
+					</div>
+					<div id="r3c2" class="row3Cell column2Cell">
+						<span class="mark"></span>
+					</div>
+					<div id="r3c3" class="row3Cell column3Cell">
+						<span class="mark"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<audio id="sound"></audio>
+	<script type="text/javascript" src="js/index.js"></script>
+	</body>
+</html>
