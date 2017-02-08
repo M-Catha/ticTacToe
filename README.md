@@ -8,9 +8,11 @@ The game has two modes:
 * Player vs. Player
 * Player vs. Computer
 
-In player vs. player, opponents take turns until a winner is declared or the game ends in a tie.  Games won are tracked on each respective player's scoreboard.
+In player vs. player, opponents take turns until a winner is declared or the game ends in a tie.
 
-In player vs. computer, the player will play against a "smart" AI.  The AI for this game is **not** unbeatable, but it will logically play the game (blocking a player's potential win or taking the win, if available).
+In player vs. computer, the player will play against a "smart" AI.  The AI for this game is **not** unbeatable, but it will logically play the game (blocking a player's potential win or taking the win, if available).  The game will conclude when someone wins or the game ends in a tie.
+
+Games won are tracked via each respective players's scoreboard.
 
 ### Winning
 
