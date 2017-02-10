@@ -391,10 +391,12 @@ function setPotentialVars(string, sequence) {
 	potentialWinArr.pop();	// Remove extra "" on the end of array after splitting
 }
 
+// Ensure potential winner is still there before computer's turn
 function checkPotentialWinner() {
 	
 	var markCount = 0;
 
+	// Ensure potential win is still there
 	for (var i = 0; i <= 2; i++) {
 		var selector = "#" + potentialWinArr[i];
 		var selectorVal = $(selector).text();
@@ -402,7 +404,10 @@ function checkPotentialWinner() {
 			markCount++;
 		}
 	}
-
+	
+	// If the potential win is no longer available,
+	// erase it and check board again for a new
+	// potential win (in all directions)
 	if (markCount === 3) {
 		potentialWinArr = [];
 		potentialWinSequence = "";
