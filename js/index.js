@@ -36,7 +36,7 @@ var player1Score = 0;
 var player2Score = 0;
 var potentialWinSequence = "";	// Captures a potential win (for pVc mode)
 var potentialWinMarker = "";	// Captures X or O as potential winner (for pVc mode)
-var potentialWinArr = [];		// Potential sequence is pushed to array (for pVc mode)
+var potentialWinArr = [];	// Potential sequence is pushed to array (for pVc mode)
 var computerCanWin = false;
 var sounds = {
 	move: "assets/sounds/click.mp3",
@@ -60,7 +60,7 @@ function playGame(boardID) {
 function computerTurn() {
 
 	checkPotentialWinner();				
-	if (potentialWinSequence !== "") {	// If a win is available...
+	if (potentialWinSequence !== "") {  // If a win is available...
 		
 		var selector;
 		var selectorVal;
@@ -75,14 +75,14 @@ function computerTurn() {
 				checkForWinner();
 				$(".board").removeClass("unclickable");
 				return;
-			} else if (selectorVal === "") {	// If win isn't an option, block player from winning
+			} else if (selectorVal === "") {  // If win isn't an option, block player from winning
 				placeMark(potentialWinArr[i]);
 				checkForWinner();
 				$(".board").removeClass("unclickable");
 				return;
 			};
 		}
-	} else {	// If no win available, choose randomly
+	} else {  // If no win available, choose randomly
 		chooseRandom();
 	}
 }
@@ -94,7 +94,7 @@ function chooseRandom() {
 	var col = generateRandomNumber();
 	var boardID = "r" + (row + 1) + "c" + (col + 1);
 
-	if (boardArray[row][col] !== "") { // If space is occupied, computer picks again
+	if (boardArray[row][col] !== "") {  // If space is occupied, computer picks again
 		chooseRandom();
 	} else {
 		placeMark(boardID);
@@ -316,7 +316,7 @@ function checkHandV(direction) {
 			winningArr.pop();	// Remove extra "" on the end of array after splitting
 			result = checkString;
 		} else if (checkString === "XX" && mode === "pVc" && !computerCanWin) {	// Only use in pVc mode and only change
-			setPotentialVars(markers.ex, winningSequence);						// if computer is not in line to win
+			setPotentialVars(markers.ex, winningSequence);			// if computer is not in line to win
 			blankOut();
 		} else if (checkString === "OO" && mode === "pVc" && !computerCanWin) {
 			setPotentialVars(markers.oh, winningSequence);
@@ -359,7 +359,7 @@ function checkDiagonal(direction) {
 		winningArr.pop();	// Remove extra "" on the end of array after splitting
 		result = checkString;
 	} else if (checkString === "XX" && mode === "pVc" && !computerCanWin) {	// Only use in pVc mode and only change
-		setPotentialVars(markers.ex, winningSequence);						// if computer is not in line to win
+		setPotentialVars(markers.ex, winningSequence);			// if computer is not in line to win
 		blankOut();
 	} else if (checkString === "OO" && mode === "pVc" && !computerCanWin) {
 		setPotentialVars(markers.oh, winningSequence);
@@ -528,7 +528,7 @@ function clearBoard() {
 			boardArray[i][j] = "";
 			selectorString = "#r" + (i + 1) + "c" + (j + 1);
 			$(selectorString).text("")
-							 .removeClass("highlightText ohBG exBG unclickable")
+			.removeClass("highlightText ohBG exBG unclickable")
 		}
 	}
 	$(".board").removeClass("tied unclickable");
@@ -632,7 +632,7 @@ $(".ex, .oh").on("click", function() {
 // and then passed to corresponding divs (.mode and .resetOption)
 // after they are created
 
-$(document).on("click", ".mode", function() {	// Selects pVp or pVc
+$(document).on("click", ".mode", function() {  // Selects pVp or pVc
 	playSound("close");
 	mode = $(this).attr("id");
 	
@@ -645,7 +645,7 @@ $(document).on("click", ".mode", function() {	// Selects pVp or pVc
 	setActivePlayerBG();
 })
 
-$(document).on("click", ".resetOption", function() {	// Keep playing or reset entirely
+$(document).on("click", ".resetOption", function() {  // Keep playing or reset entirely
 	playSound("close");
 	var option = $(this).attr("id");
 	
@@ -654,8 +654,8 @@ $(document).on("click", ".resetOption", function() {	// Keep playing or reset en
 	} else {
 		softReset();
 		hideDisplay(".modeTitle", ".resetOption");
-		if (startingPlayer === "Computer") {	// Keep the computer from playing immediately
-			clearBoard();						// after choosing to keep playing
+		if (startingPlayer === "Computer") {  // Keep the computer from playing immediately
+			clearBoard();		      // after choosing to keep playing
 			$(".board").addClass("unclickable");
 			setTimeout(computerTurn, 1000);
 		} else {
