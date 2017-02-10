@@ -16,8 +16,8 @@ row1_cell1 = row1_cell2 = row1_cell3 = row2_cell1 = row2_cell2 =
 row2_cell3 = row3_cell1 = row3_cell2 = row3_cell3 = "";
 
 var boardArray = [[row1_cell1, row1_cell2, row1_cell3],
-				  [row2_cell1, row2_cell2, row2_cell3],
-				  [row3_cell1, row3_cell2, row3_cell3]];
+		  [row2_cell1, row2_cell2, row2_cell3],
+		  [row3_cell1, row3_cell2, row3_cell3]];
 
 var markers = {
 	ex: "X",
